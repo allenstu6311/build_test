@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0">
+  <script>
+    // 获取当前路径
+    var path = window.location.pathname;
+    var newPath;
+
+    // 根据路径判断重定向到不同的入口
+    if (path.startsWith('/build_test/ex-index')) {
+      newPath = '/build_test/ex-index/#' + path.replace('/build_test/ex-index', '');
+    } else if (path.startsWith('/build_test/co-index')) {
+      newPath = '/build_test/co-index/#' + path.replace('/build_test/co-index', '');
+    } else {
+      // 默认重定向到 co-index 或者其他默认入口
+      newPath = '/build_test/co-index/#' + path.replace('/build_test', '');
+    }
+
+    // 重定向到新的路径
+    window.location.replace(newPath);
+  </script>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+</body>
+</html>
